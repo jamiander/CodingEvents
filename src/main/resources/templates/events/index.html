@@ -15,10 +15,14 @@
         <tr>
             <th>Name</th>
             <th>Description</th>
+            <th>Location</th>
         </tr>
     </thead>
     <tr th:each="event : ${events}">
-    <td th:text="${event}"></td>
+        <td th:text="${event.key}"></td>
+        <td th:text="${event.value.key}"></td>
+        <td th:text="${event.value.value}"></td>
+
     </tr>
 </table>
 
