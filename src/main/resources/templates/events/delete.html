@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http:/>/www.thymeleaf.org/">
 <head th:replace="fragments :: head">
-    <nav th:replace="fragments :: navigation"></nav>
 
 </head>
 <body class="container">
-
-<h1>Delete Events</h1>
-
+<h1 th:replace="fragments :: title"></h1>
+<nav th:replace="fragments :: navigation"></nav>
 <form method="post">
 
     <th:block th:each="event : ${events}">
