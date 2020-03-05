@@ -3,6 +3,7 @@ package org.launchcode.codingevents.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.*;
 import java.util.Objects;
 
@@ -27,19 +28,21 @@ public class Event extends AbstractEntity {
     @AssertTrue(message="Only include events that require registration.")
     private boolean register;
 
-    private EventType type;
+    @ManyToOne
+    @NotNull(message="Category must be provided.")
+    private EventCategory eventCategory;
 
     @Min(25)
     private int numAttendees;
 
 
-    public Event(String name, String eventDescription, String contactEmail, String location, boolean register, EventType type, int numAttendees) {
+    public Event(String name, String eventDescription, String contactEmail, String location, boolean register, EventCategory eventCategory, int numAttendees) {
         this.name = name;
         this.eventDescription = eventDescription;
         this.contactEmail = contactEmail;
         this.location = location;
         this.register = register;
-        this.type = type;
+        this.eventCategory = eventCategory;
         this.numAttendees = numAttendees;
     }
 
@@ -85,16 +88,17 @@ public class Event extends AbstractEntity {
         this.register = register;
     }
 
-    public EventType getType() {
-        return type;
-    }
-
-    public void setType(EventType type) {
-        this.type = type;
-    }
 
     public int getNumAttendees() {
         return numAttendees;
+    }
+
+    public EventCategory getEventCategory() {
+        return eventCategory;
+    }
+
+    public void setEventCategory(EventCategory eventCategory) {
+        this.eventCategory = eventCategory;
     }
 
     public void setNumAttendees(int numAttendees) {
