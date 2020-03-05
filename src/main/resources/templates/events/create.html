@@ -15,27 +15,27 @@
     </div>
     <div class="form-group">
         <label>Description
-            <input th:field="${event.eventDescription}" class="form-control">
+            <input th:field="${event.eventDetails.eventDescription}" class="form-control">
         </label>
-        <p class="error" th:errors="${event.eventDescription}"></p>
+        <p class="error" th:errors="${event.eventDetails.eventDescription}"></p>
     </div>
     <div class="form-group">
         <label>Email
-            <input th:field="${event.contactEmail}" class="form-control">
+            <input th:field="${event.eventDetails.contactEmail}" class="form-control">
         </label>
-        <p class="error" th:errors="${event.contactEmail}"></p>
+        <p class="error" th:errors="${event.eventDetails.contactEmail}"></p>
     </div>
     <div class="form-group">
         <label>Location
-            <input th:field="${event.location}" class="form-control">
+            <input th:field="${event.eventDetails.location}" class="form-control">
         </label>
-        <p class="error" th:errors="${event.location}"></p>
+        <p class="error" th:errors="${event.eventDetails.location}"></p>
     </div>
     <div class="form-group">
         <label>Must Register
-            <input th:field="${event.register}" class="form-control">
+            <input th:field="${event.eventDetails.register}" class="form-control">
         </label>
-        <p class="error" th:errors="${event.register}"></p>
+        <p class="error" th:errors="${event.eventDetails.register}"></p>
     </div>
     <div class="form-group">
         <label>Category
@@ -50,9 +50,9 @@
     </div>
     <div class="form-group">
         <label>Number of Attendees
-            <input th:field="${event.numAttendees}" class="form-control">
+            <input th:field="${event.eventDetails.numAttendees}" class="form-control">
         </label>
-        <p class="error" th:errors="${event.numAttendees}"></p>
+        <p class="error" th:errors="${event.eventDetails.numAttendees}"></p>
     </div>
     <div class="form-group">
         <input type="submit" value="Create Event" class="btn btn-success">
